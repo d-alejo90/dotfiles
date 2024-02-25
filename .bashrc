@@ -18,8 +18,10 @@ bind -x '"\C-l":clear'
 export BROWSER="firefox"
 
 # directories
-export REPOS="$HOME/Repos"
-export GITUSER="mischavandenburg"
+export REPOS="$HOME/repos"
+export GITUSER="d-alejo90"
+export GITUSERSUNRISE="diegosunrise"
+export GHSUNRISEREPOS="$REPOS/github.com/$GITUSERSUNRISE"
 export GHREPOS="$REPOS/github.com/$GITUSER"
 export DOTFILES="$GHREPOS/dotfiles"
 export LAB="$GHREPOS/lab"
@@ -153,7 +155,7 @@ alias v=nvim
 # alias vim=nvim
 
 # cd
-alias vo='cd $REPOS/github.com/VanOord/'
+alias sun='cd $GHSUNRISEREPOS'
 alias ..="cd .."
 alias scripts='cd $SCRIPTS'
 alias cdblog="cd ~/websites/blog"
@@ -163,16 +165,10 @@ alias alab='cd $GHREPOS/azure-lab'
 alias dot='cd $GHREPOS/dotfiles'
 alias repos='cd $REPOS'
 alias cdgo='cd $GHREPOS/go/'
-alias ex='cd $REPOS/github.com/mischavandenburg/go/Exercism/'
 alias rwdot='cd $REPOS/github.com/rwxrob/dot'
 alias c="clear"
-alias icloud="cd \$ICLOUD"
 alias rob='cd $REPOS/github.com/rwxrob'
-alias homelab='cd $REPOS/github.com/mischavandenburg/homelab/'
 alias hl='homelab'
-alias hlp='cd $REPOS/github.com/mischavandenburg/homelab-private/'
-alias hlps='cd $REPOS/github.com/mischavandenburg/homelab-private-staging/'
-alias hlpp='cd $REPOS/github.com/mischavandenburg/homelab-private-production/'
 
 # ls
 alias ls='ls --color=auto'
@@ -269,10 +265,10 @@ else
 fi
 
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-export PATH="/Users/mischa/.rd/bin:$PATH"
+export PATH="/Users/dalejo-90/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
 
 # Only needed for npm install on WSL
-#export NVM_DIR="$HOME/.config/nvm"
-#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
-#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
