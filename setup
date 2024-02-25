@@ -4,7 +4,7 @@
 # this after cloning the repo on a Mac or Ubuntu (WSL) system and be up
 # and running very quickly.
 
-# create directories
+# create config directories
 export XDG_CONFIG_HOME="$HOME"/.config
 mkdir -p "$XDG_CONFIG_HOME"/bash
 mkdir -p "$XDG_CONFIG_HOME"/alacritty
@@ -54,6 +54,13 @@ sudo apt install build-essential git
 # install brew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
+(
+	echo
+	echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"'
+) >>/home/d-alejo90/.bashrc
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
 brew install --cask alacritty
 
 # brew packages Mac
@@ -66,10 +73,29 @@ sudo apt install ripgrep gh
 sudo apt install gcc g++ unzip
 
 # ubuntu brew for vim and neovim setup
-sudo apt install fd fzf kubectl kubectx derailed/k9s/k9s
+sudo apt-get update
+# apt-transport-https may be a dummy package; if so, you can skip that package
+sudo apt-get install -y apt-transport-https ca-certificates curl gpgsudo apt-get update
+# apt-transport-https may be a dummy package; if so, you can skip that package
+sudo apt-get install -y apt-transport-https ca-certificates curl gpg
+# If the folder `/etc/apt/keyrings` does not exist, it should be created before the curl command, read the note below.
+sudo mkdir -p -m 755 /etc/apt/keyrings
+
+curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.29/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+
+# This overwrites any existing configuration in /etc/apt/sources.list.d/kubernetes.list
+echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.29/deb/ /' | sudo tee /etc/apt/sources.list.d/kubernetes.list
+
+sudo apt-get update
+sudo apt-get install -y kubelet kubeadm kubectl
+sudo apt-mark hold kubelet kubeadm kubectl
+sudo apt-get install fd fzf kubectx derailed/k9s/k9s
 
 # ubuntu brew for neovim setup
 brew install neovim go lazygit
+
+#install pomo
+go install github.com/rwxrob/pomo/cmd/pomo@latest
 
 # ubuntu specific notes
 # create symbolic link to neovim from vim when not using neovim on

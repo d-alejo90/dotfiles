@@ -27,7 +27,7 @@ export DOTFILES="$GHREPOS/dotfiles"
 export LAB="$GHREPOS/lab"
 export SCRIPTS="$DOTFILES/scripts"
 export ICLOUD="$HOME/icloud"
-export SECOND_BRAIN="$HOME/garden"
+export SECOND_BRAIN="$HOME/second-brain"
 
 # Go related. In general all executables and scripts go in .local/bin
 export GOBIN="$HOME/.local/bin"
@@ -125,8 +125,8 @@ fi
 # ssh-add -q ~/.ssh/mischa
 # ssh-add -q ~/.ssh/mburg
 #{
-ssh-add -q ~/.ssh/id_ed25519
-ssh-add -q ~/.ssh/vanoord
+# ssh-add -q ~/.ssh/id_ed25519
+# ssh-add -q ~/.ssh/vanoord
 #} &>/dev/null
 
 # ~~~~~~~~~~~~~~~ Prompt ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -158,10 +158,8 @@ alias v=nvim
 alias sun='cd $GHSUNRISEREPOS'
 alias ..="cd .."
 alias scripts='cd $SCRIPTS'
-alias cdblog="cd ~/websites/blog"
-alias cdpblog='cd $SECOND_BRAIN/2-areas/blog/content'
+alias cdblog='cd $SECOND_BRAIN/blog/content'
 alias lab='cd $LAB'
-alias alab='cd $GHREPOS/azure-lab'
 alias dot='cd $GHREPOS/dotfiles'
 alias repos='cd $REPOS'
 alias cdgo='cd $GHREPOS/go/'
@@ -212,9 +210,6 @@ alias cards='python3 /opt/homebrew/lib/python3.11/site-packages/mtg_proxy_printe
 # terraform
 alias tp='terraform plan'
 
-# fun
-alias fishies=asciiquarium
-
 # kubectl
 alias k='kubectl'
 source <(kubectl completion bash)
@@ -227,17 +222,17 @@ alias kcs='kubectl config use-context admin@homelab-staging'
 alias kcp='kubectl config use-context admin@homelab-production'
 
 # flux
-source <(flux completion bash)
-alias fgk='flux get kustomizations'
+# source <(flux completion bash)
+# alias fgk='flux get kustomizations'
 
 # talos
-source <(talosctl completion bash)
+# source <(talosctl completion bash)
 
 # EDB
-source <(kubectl-cnp completion bash)
+# source <(kubectl-cnp completion bash)
 
 # cilium
-source <(cilium completion bash)
+# source <(cilium completion bash)
 
 # env variables
 export VISUAL=nvim
@@ -250,7 +245,7 @@ alias fp="fzf --preview 'bat --style=numbers --color=always --line-range :500 {}
 alias vf='v $(fp)'
 
 # sourcing
-source "$HOME/.privaterc"
+# source "$HOME/.privaterc"
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
 	source "$HOME/.fzf.bash"
@@ -272,3 +267,9 @@ export PATH="/Users/dalejo-90/.rd/bin:$PATH"
 export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"

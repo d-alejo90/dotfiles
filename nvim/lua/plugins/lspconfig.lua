@@ -7,10 +7,10 @@ return {
       servers = {
         -- pyright will be automatically installed with mason and loaded with lspconfig
         -- pyright = {},
-        bashls = {},
+        -- bashls = {},
         -- gopls = {},
         bicep = {},
-        yamlls = {},
+        -- yamlls = {},
         marksman = {},
         powershell_es = {},
         -- azure_pipelines_ls = {},
