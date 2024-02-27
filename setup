@@ -97,6 +97,10 @@ brew install neovim go lazygit
 #install pomo
 go install github.com/rwxrob/pomo/cmd/pomo@latest
 
+# install flatpak to install obsidian in ubuntu
+# sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+# sudo flatpak install -y flathub md.obsidian.Obsidian
+
 # ubuntu specific notes
 # create symbolic link to neovim from vim when not using neovim on
 # Ubuntu systems, because I use the v alias everywhere.
