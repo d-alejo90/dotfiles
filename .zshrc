@@ -35,12 +35,11 @@ export BROWSER="firefox"
 # Directories
 
 export REPOS="$HOME/Repos"
-export GITUSER="mischavandenburg"
+export GITUSER="d-alejo90"
 export GHREPOS="$REPOS/github.com/$GITUSER"
 export DOTFILES="$GHREPOS/dotfiles"
 export LAB="$GHREPOS/lab"
 export SCRIPTS="$DOTFILES/scripts"
-export ICLOUD="$HOME/icloud"
 export ZETTELKASTEN="$HOME/Zettelkasten"
 
 # Go related. In general all executables and scripts go in .local/bin
@@ -60,8 +59,6 @@ path=(
     $path                           # Keep existing PATH entries
     $HOME/bin
     $HOME/.local/bin
-    $HOME/dotnet
-    /home/linuxbrew/.linuxbrew/opt/dotnet@8/bin # Dotnet for dev container
     $SCRIPTS
     $HOME/.krew/bin
     $HOME/.rd/bin                   # Rancher Desktop
@@ -130,16 +127,11 @@ alias repos='cd $REPOS'
 alias ghrepos='cd $GHREPOS'
 alias gr='ghrepos'
 alias cdgo='cd $GHREPOS/go/'
-alias rob='cd $REPOS/github.com/rwxrob'
 
 # Homelab
 
 alias homelab='cd $GHREPOS/homelab/'
 alias hl='homelab'
-alias hlp='cd $GHREPOS/homelab-private/'
-alias hlps='cd $GHREPOS/homelab-private-staging/'
-alias hlpp='cd $GHREPOS/homelab-private-production/'
-alias skool='cd $GHREPOS/skool/'
 
 # ls
 
@@ -191,13 +183,6 @@ alias pc='pass show -c'
 
 alias ds='devpod ssh'
 
-# Bluetooth
-
-# Airpods Max
-alias btm='bluetoothctl connect 08:FF:44:0E:EA:D6'
-
-# Airpods
-alias bta='bluetoothctl connect 08:65:18:78:BD:A6'
 
 # ~~~~~~~~~~~~~~~ Completion ~~~~~~~~~~~~~~~~~~~~~~~~
 
