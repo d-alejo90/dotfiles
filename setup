@@ -92,6 +92,8 @@ sudo apt install curl
 
 # install brew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# Add homebrew to PATH
 echo >> /home/dalejo90/.bashrc
 echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /home/dalejo90/.bashrc
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
@@ -99,8 +101,8 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 # get the font out of the way first, it's the most annoying
 
 # install for Mac using brew.
-# brew install --cask font-iosevka-nerd-font
-# brew install --cask font-ubuntu-mono-nerd-font
+brew install --cask font-iosevka-nerd-font
+brew install --cask font-ubuntu-mono-nerd-font
 
 # For ubuntu:
 mkdir -p $HOME/.local/share/fonts
@@ -111,7 +113,7 @@ cp $PWD/fonts/UbuntuMono* $HOME/.local/share/fonts
 # amethyst fzf nvim exa hugo bash-completion@2 newsboat kubectl starship
 
 # ubuntu packages apt
-sudo apt install ripgrep gh
+sudo apt install zsh zsh-completions fzf npm tmux ripgrep fd
 
 # ubuntu apt neovim setup
 sudo apt install gcc g++ unzip
