@@ -88,7 +88,7 @@ fi
 # Packages
 
 # install brew
-# /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 # get the font out of the way first, it's the most annoying
 
@@ -111,7 +111,7 @@ sudo apt install ripgrep gh
 sudo apt install gcc g++ unzip
 
 # ubuntu brew for vim and neovim setup
-sudo apt install fd fzf kubectl kubectx derailed/k9s/k9s starship
+brew install fd fzf kubectl kubectx derailed/k9s/k9s starship
 
 # ubuntu brew for neovim setup
 brew install neovim go lazygit
