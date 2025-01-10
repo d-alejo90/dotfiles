@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DOTFILES_DIR="$HOME/Repos/github.com/mischavandenburg/dotfiles"
+DOTFILES_DIR="$HOME/Repos/github.com/d-alejo90/dotfiles"
 XDG_CONFIG_HOME="$HOME/.config"
 
 create_directories() {
@@ -97,29 +97,29 @@ fi
 # brew install --cask font-ubuntu-mono-nerd-font
 
 # For ubuntu:
-# mkdir -p $HOME/.local/share/fonts
-# cp $PWD/fonts/UbuntuMono* $HOME/.local/share/fonts
+mkdir -p $HOME/.local/share/fonts
+cp $PWD/fonts/UbuntuMono* $HOME/.local/share/fonts
 
 # brew packages Mac
 # brew install --cask alacritty
 # amethyst fzf nvim exa hugo bash-completion@2 newsboat kubectl starship
 
 # ubuntu packages apt
-# sudo apt install ripgrep gh
+sudo apt install ripgrep gh
 
 # ubuntu apt neovim setup
-# sudo apt install gcc g++ unzip
+sudo apt install gcc g++ unzip
 
 # ubuntu brew for vim and neovim setup
-# sudo apt install fd fzf kubectl kubectx derailed/k9s/k9s starship
+sudo apt install fd fzf kubectl kubectx derailed/k9s/k9s starship
 
 # ubuntu brew for neovim setup
-# brew install neovim go lazygit
+brew install neovim go lazygit
 
 # ubuntu specific notes
 # create symbolic link to neovim from vim when not using neovim on
 # Ubuntu systems, because I use the v alias everywhere.
-# sudo ln -sf /usr/bin/vim /usr/bin/nvim
+sudo ln -sf /usr/bin/vim /usr/bin/nvim
 
 # Arch Linux
 
