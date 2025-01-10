@@ -92,6 +92,9 @@ sudo apt install curl
 
 # install brew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+echo >> /home/dalejo90/.bashrc
+echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /home/dalejo90/.bashrc
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # get the font out of the way first, it's the most annoying
 
@@ -114,10 +117,10 @@ sudo apt install ripgrep gh
 sudo apt install gcc g++ unzip
 
 # ubuntu brew for vim and neovim setup
-brew install fd fzf kubectl kubectx derailed/k9s/k9s starship
+sudo brew install fd fzf kubectl kubectx derailed/k9s/k9s starship
 
 # ubuntu brew for neovim setup
-brew install neovim go lazygit
+sudo brew install neovim go lazygit
 
 # ubuntu specific notes
 # create symbolic link to neovim from vim when not using neovim on
@@ -130,5 +133,5 @@ sudo ln -sf /usr/bin/vim /usr/bin/nvim
 # sudo pacman -Syu zsh zsh-completions ttf-ubuntu-mono-nerd fzf npm unzip tmux ripgrep fd
 
 # set up prompt
-# mkdir -p "$HOME/.zsh"
-# git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
+mkdir -p "$HOME/.zsh"
+git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
