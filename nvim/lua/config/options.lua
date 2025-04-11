@@ -42,3 +42,6 @@ opt.scrolloff = 8
 vim.g.lazygit_config = false
 
 vim.g.snacks_animate = false
+
+-- PHP: set inteliphense
+vim.g.lazyvim_php_lsp = "intelephense"

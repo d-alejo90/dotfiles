@@ -94,8 +94,8 @@ sudo apt install curl
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 # Add homebrew to PATH
-echo >> /home/dalejo90/.bashrc
-echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> /home/dalejo90/.bashrc
+echo >>/home/dalejo90/.bashrc
+echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >>/home/dalejo90/.bashrc
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # get the font out of the way first, it's the most annoying
@@ -113,7 +113,7 @@ cp $PWD/fonts/UbuntuMono* $HOME/.local/share/fonts
 # amethyst fzf nvim exa hugo bash-completion@2 newsboat kubectl starship
 
 # ubuntu packages apt
-sudo apt install zsh zsh-completions fzf npm tmux ripgrep fd
+sudo apt install zsh fzf npm tmux ripgrep fd
 
 # ubuntu apt neovim setup
 sudo apt install gcc g++ unzip

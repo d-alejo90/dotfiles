@@ -117,7 +117,7 @@ alias v=nvim
 alias scripts='cd $SCRIPTS'
 alias cdblog="cd ~/websites/blog"
 alias c="clear"
-alias icloud="cd \$ICLOUD"
+alias zrc="v ~/.zshrc"
 
 # Repos
 
@@ -127,11 +127,22 @@ alias repos='cd $REPOS'
 alias ghrepos='cd $GHREPOS'
 alias gr='ghrepos'
 alias cdgo='cd $GHREPOS/go/'
+alias h='cd ~'
 
 # Homelab
 
 alias homelab='cd $GHREPOS/homelab/'
 alias hl='homelab'
+
+#Terraform
+alias  tf='terraform'
+alias tfp='terraform plan'
+alias tfi='terraform init'
+alias tfd='terraform destroy'
+alias tfa='terraform apply'
+
+# forti-client
+alias ofc='sudo openfortivpn'
 
 # ls
 
@@ -201,18 +212,38 @@ zstyle ':completion:*' menu select
 
 # Example to install completion:
 # talosctl completion zsh > ~/.zfunc/_talosctl
+source <(kubectl completion zsh)
 
 
 # ~~~~~~~~~~~~~~~ Sourcing ~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-source "$HOME/.privaterc"
+# source "$HOME/.privaterc"
 source <(fzf --zsh)
 
-eval "$(direnv hook zsh)"
+# eval "$(direnv hook zsh)"
 
 # ~~~~~~~~~~~~~~~ Misc ~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 
 fpath+=~/.zfunc; autoload -Uz compinit; compinit
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/home/dalejo90/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
+
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+## nvm
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+# bun completions
+[ -s "/home/dalejo90/.bun/_bun" ] && source "/home/dalejo90/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

@@ -4,11 +4,13 @@
 --
 vim.keymap.set("n", "<leader>p", '<cmd>lua require("cmp").setup { enabled = true }<cr>', { desc = "Enable completion" })
 vim.keymap.set(
-  "n",
-  "<leader>P",
-  '<cmd>lua require("cmp").setup { enabled = false }<cr>',
-  { desc = "Disable completion" }
+    "n",
+    "<leader>P",
+    '<cmd>lua require("cmp").setup { enabled = false }<cr>',
+    { desc = "Disable completion" }
 )
+-- Deactivate ctrl-z to avoid to close neovim
+vim.keymap.set("n", "<C-z>", "")
 
 -- map esc to jk for laptop use
 -- vim.keymap.set("i", "jk", "<Esc>", { desc = "Escape jk" })
@@ -32,10 +34,10 @@ vim.keymap.set("n", "<leader>fs", "<cmd>Telescope symbols<cr>", { desc = "Find S
 
 -- convert Current line to title cases
 vim.keymap.set(
-  "n",
-  "<leader>rlt",
-  "<cmd>lua require('textcase').current_word('to_title_case')<CR>",
-  { desc = "Replace Line Title" }
+    "n",
+    "<leader>rlt",
+    "<cmd>lua require('textcase').current_word('to_title_case')<CR>",
+    { desc = "Replace Line Title" }
 )
 -- vim.keymap.set("n", "<leader>rlt", "<cmd>s/<./\u&/g<cr>", { desc = "Replace Line Title" })
 
